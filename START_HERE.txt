@@ -1,0 +1,10 @@
+HAIL DIGITALS V6 COMMERCIAL TEST BUILD
+1. Extract this ZIP.
+2. Open the NMC 5 folder in File Explorer.
+3. Type cmd in the address bar and press Enter.
+4. Run: npm install
+5. Run: npm start
+6. Browse to: http://localhost:3000
+Admin: http://localhost:3000/admin.html
+PAYMENTS ARE SIMULATED ONLY. NO REAL MONEY IS CHARGED.
+See README.md for the test workflow and production-launch warnings.
