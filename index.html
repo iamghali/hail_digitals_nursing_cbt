@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HAIL DIGITALS | Ghana Nursing CBT Practice Centre — V6</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img class="brand-logo" src="/assets/hail-digitals-logo.jpg" alt="HAIL DIGITALS logo"><div><b>HAIL DIGITALS</b><span class="brand-title">Ghana Nursing CBT Practice Centre</span><small>Independent practice & mock examination platform</small></div></div>
+  <div id="candidateBadge">Practice Candidate</div>
+</header>
+
+<main>
+<section id="home" class="view active">
+  <div class="card hero">
+    <div class="welcome-banner"><div><span class="eyebrow">HAIL DIGITALS • NURSING EDUCATION TECHNOLOGY</span><h1>Ghana Nursing CBT Practice Centre</h1><p class="muted">Prepare, practise and build confidence before taking a computer-based nursing or midwifery examination.</p></div><img src="/assets/hail-digitals-logo.jpg" alt="HAIL DIGITALS"></div>
+    <div class="notice"><b>⚠️ Disclaimer</b><br>This is an independent educational simulator. It is not an official Nursing and Midwifery Council examination system and does not reproduce official examination questions.</div>
+    <section class="access-panel">
+      <h2>Candidate Account & Access</h2>
+      <p class="muted">Create an account or sign in. You can then purchase a package in test mode or redeem an access code.</p>
+      <div class="grid2"><label>Full name<input id="authName" placeholder="Your full name"></label><label>Email address<input id="authEmail" type="email" placeholder="you@example.com"></label><label>Phone number<input id="authPhone" placeholder="Optional"></label><label>Password<input id="authPassword" type="password" minlength="8" placeholder="At least 8 characters"></label></div>
+      <div class="actions"><button class="primary" id="registerBtn">Create Account</button><button class="secondary" id="loginBtn">Sign In</button><button class="ghost" id="logoutBtn" style="display:none">Sign Out</button></div>
+      <p id="authMessage" role="status"></p><div id="accountStatus" class="account-status">Not signed in</div>
+      <h3>Practice Packages (TEST MODE — no real payment)</h3><div id="planCards" class="plan-grid"></div>
+      <div class="redeem-row"><label>Have an access code?<input id="accessCode" placeholder="HAIL-XXXXXXXX"></label><button class="secondary" id="redeemBtn">Redeem Code</button></div>
+      <p class="test-note">Test checkout only: successful and declined transactions are simulated. No Mobile Money, card or bank account will be charged.</p>
+    </section>
+    <section class="instructions"><div class="instruction-head"><div><h2>Before You Start</h2><p class="muted">If you are new to computer-based examinations, read these simple instructions first.</p></div><button class="ghost" id="showInstructions">Open Instructions</button></div><div class="instruction-grid"><div><strong>1. Choose your programme</strong><span>Select the nursing or midwifery programme you are preparing for.</span></div><div><strong>2. Choose your mode</strong><span>Use Practice mode to learn without a timer or Timed Mock to simulate exam pressure.</span></div><div><strong>3. Select an answer</strong><span>Click one option. You can return to a question and change your answer.</span></div><div><strong>4. Use the navigator</strong><span>The question numbers show which questions you have answered and where you are.</span></div><div><strong>5. Watch the timer</strong><span>In a timed mock, keep an eye on the remaining time and work steadily.</span></div><div><strong>6. Submit carefully</strong><span>Review your answers before submitting. Your practice result is shown after submission.</span></div></div></section>
+    <h2 class="choose-title">Start Your Practice</h2>
+    <p class="muted">Practise the computer workflow, answer questions under time pressure, review your performance and identify areas for further study.</p>
+    <input id="name" type="hidden">
+    <div class="grid2">
+      <label>Programme<select id="programme"></select></label>
+      <label>Mode<select id="mode"><option value="mock">Timed Mock</option><option value="practice">Practice — no timer</option></select></label>
+      <label>Number of questions<select id="count"><option>20</option><option>30</option><option>40</option><option>60</option></select></label>
+    </div>
+    <div class="features"><div><b>CBT familiarisation</b><span>Simple navigation and clear answer selection.</span></div><div><b>Instant scoring</b><span>See your score after submission.</span></div><div><b>Practice analytics</b><span>Review strengths and weak areas.</span></div></div>
+    <button class="primary big" id="start">Start Examination</button>
+  </div>
+</section>
+
+<section id="exam" class="view">
+ <div class="exam">
+  <div class="maincard">
+   <div class="examtop"><div><small id="examProgramme"></small><h2 id="qTitle">Question 1</h2></div><div id="timer" class="timer">--:--</div></div>
+   <div class="progressline"><span id="progressText"></span><div><i id="progress"></i></div></div>
+   <article><div id="question"></div><div id="options"></div></article>
+   <div class="nav"><button class="secondary" id="prev">Previous</button><button class="ghost" id="clear">Clear Answer</button><button class="primary" id="next">Next</button></div>
+  </div>
+  <aside class="side">
+    <h3>Question Navigator</h3>
+    <div class="legend"><span>● Answered</span><span>○ Unanswered</span><span>● Current</span></div>
+    <div id="grid" class="qgrid"></div>
+    <button class="danger full" id="submit">Submit Examination</button>
+  </aside>
+ </div>
+</section>
+
+<section id="results" class="view">
+ <div class="card result">
+  <div class="check">✓</div><h1>Examination Completed</h1><p id="resultText" class="muted"></p>
+  <div class="score"><small>Practice Score</small><strong id="score">0%</strong><span id="detail"></span></div>
+  <div id="breakdown"></div>
+  <button class="primary" id="again">Start Another Examination</button>
+  <button class="secondary" id="homeBtn">Return Home</button>
+ </div>
+</section>
+</main>
+
+<div id="instructionsModal" class="modal hidden"><div class="modalcard instruction-modal"><h2>CBT Familiarisation</h2><p>CBT means <b>Computer-Based Test</b>: an examination presented on a computer where candidates use the screen, mouse and keyboard to answer questions.</p><ol><li>Read the question carefully.</li><li>Click the answer you think is correct.</li><li>Use <b>Next</b> and <b>Previous</b> to move around.</li><li>Use the navigator to jump to any question.</li><li>You may change an answer before submission.</li><li>In a timed mock, monitor the countdown.</li><li>Use <b>Submit Examination</b> only when you are ready.</li></ol><div class="actions"><button class="primary" id="closeInstructions">I Understand</button></div></div></div>
+
+<div id="modal" class="modal hidden"><div class="modalcard"><h2>Submit examination?</h2><p id="warning"></p><div class="actions"><button class="secondary" id="cancel">Continue</button><button class="danger" id="confirm">Confirm Submit</button></div></div></div>
+<script src="/app.js"></script>
+</body>
+</html>
